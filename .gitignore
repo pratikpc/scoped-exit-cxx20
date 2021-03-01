@@ -1,0 +1,9 @@
+build
+.vs
+.vscode
+out
+vcpkg_installed
+/CMakeSettings.json
+/.goldpkg.json
+
+CMakeLists.txt.user
