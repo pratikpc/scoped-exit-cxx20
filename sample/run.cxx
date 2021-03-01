@@ -1,5 +1,7 @@
-#include <type_traits>
+#include <utility>
+
 #include <scoped_exit.hxx>
+
 #include <iostream>
 
 void no_throw ()

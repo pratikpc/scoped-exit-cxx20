@@ -30,7 +30,7 @@ A better version of [Microsoft GSL](https://github.com/microsoft/GSL)'s [Finally
 ### No Throw
 
 ```cpp
-#include <type_traits>
+#include <utility>
 #include <scoped_exit.hxx>
 #include <iostream>
 
@@ -51,7 +51,7 @@ void no_throw ()
 ### Throw
 
 ```cpp
-#include <type_traits>
+#include <utility>
 #include <scoped_exit.hxx>
 #include <iostream>
 
