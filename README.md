@@ -30,7 +30,6 @@ A better version of [Microsoft GSL](https://github.com/microsoft/GSL)'s [Finally
 ### No Throw
 
 ```cpp
-#include <utility>
 #include <scoped_exit.hxx>
 #include <iostream>
 
@@ -51,7 +50,6 @@ void no_throw ()
 ### Throw
 
 ```cpp
-#include <utility>
 #include <scoped_exit.hxx>
 #include <iostream>
 
@@ -79,6 +77,10 @@ void throw_but_catch ()
 ## [Our code](header/scoped_exit.hxx)
 
 ```cpp
+#pragma once
+
+#include <utility>
+#include <type_traits>
 namespace pc
 {
    template<typename F>

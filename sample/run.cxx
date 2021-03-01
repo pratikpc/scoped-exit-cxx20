@@ -1,5 +1,3 @@
-#include <utility>
-
 #include <scoped_exit.hxx>
 
 #include <iostream>
