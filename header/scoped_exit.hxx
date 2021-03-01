@@ -1,3 +1,4 @@
+#pragma once
 namespace pc
 {
    template <typename F>
