@@ -11,9 +11,7 @@ void no_throw ()
 
    // Note that throwing in a nothrow lambda
    // Will lead to noexcept semantics
-   pc::finally nothrow {[]() noexcept{
-      std::cout << "Perform cleanup here\n";
-   }};
+   pc::scoped_exit nothrow{[]() noexcept { std::cout << "Perform cleanup here\n"; }};
    std::cout << "Function Started\n";
    std::cout << "Function Ended\n";
 }
@@ -25,10 +23,10 @@ void throw_but_catch ()
    // But our cleanup may throw an exception
    // Which we might catch later
 
-   pc::finally throws {[]() {
       std::cout << "During Cleanup, we had to throw\n";
       throw std::exception("Sorry. Something during Cleanup errored out");
    }};
+      pc::scoped_exit throws{[]() {
 
    std::cout << "Block Started\n";
    std::cout << "Block Ended\n";

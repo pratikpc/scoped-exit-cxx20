@@ -40,7 +40,7 @@ void no_throw ()
    // So will our destructor
    // Note that throwing in a nothrow lambda
    // Will lead to noexcept semantics
-   pc::finally nothrow {[]() noexcept{
+   pc::scoped_exit nothrow {[]() noexcept{
       std::cout << "Perform cleanup here\n";
    }};
    std::cout << "Function Started\n";
@@ -58,7 +58,7 @@ void no_throw ()
 void throw_but_catch ()
 {
     try{
-        pc::finally throws {[]() {
+        pc::scoped_exit throws {[]() {
             std::cout << "During Cleanup, we had to throw\n";
             throw std::exception("Sorry. Something during Cleanup errored out");
         }};
