@@ -10,10 +10,3 @@ target_include_directories(${PROJECT_NAME}
 INTERFACE
 .
 )
-
-target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_20)
-
-
-if (MSVC)
-target_compile_options(${PROJECT_NAME} INTERFACE /Zc:__cplusplus)
-endif()
