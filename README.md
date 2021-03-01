@@ -60,7 +60,7 @@ void throw_but_catch ()
     try{
         pc::scoped_exit throws {[]() {
             std::cout << "During Cleanup, we had to throw\n";
-            throw std::exception("Sorry. Something during Cleanup errored out");
+            throw std::runtime_error("Sorry. Something during Cleanup errored out");
         }};
 
         std::cout << "Block Started\n";

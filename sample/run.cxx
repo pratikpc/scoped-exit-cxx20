@@ -24,9 +24,9 @@ void throw_but_catch ()
    // Which we might catch later
 
       std::cout << "During Cleanup, we had to throw\n";
-      throw std::exception("Sorry. Something during Cleanup errored out");
    }};
       pc::scoped_exit throws{[]() {
+         throw std::runtime_error("Sorry. Something during Cleanup errored out");
 
    std::cout << "Block Started\n";
    std::cout << "Block Ended\n";
